@@ -40,10 +40,6 @@
 .body__content {
   margin: 5% auto 5% auto;
 }
-/*.card-text{*/
-/*  font-size: 16%;*/
-/*}*/
-
 .footer {
   padding-left: 4%;
   height: 8vh;
@@ -89,8 +85,9 @@ margin-bottom: 15%;
   display: flex;
   juftify-content: center;
   align-items: center;
+
 }
-img {
+.photo{
   width: 17vw;
   height: 23vw;
 }
