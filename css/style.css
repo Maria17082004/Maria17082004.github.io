@@ -161,7 +161,7 @@ margin-bottom: 15%;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .images {
     display: grid;
     grid-template-columns: auto auto;
