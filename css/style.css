@@ -37,7 +37,7 @@
   font-size:0;
   width:60%;
 }
-.body__content {
+.body__contained{
   margin: 5% auto 5% auto;
 }
 .footer {
@@ -54,7 +54,7 @@
   color: white;
 
 }
-.footer__author{
+.footer__heading{
   margin: auto;
 }
 .interest{
@@ -63,11 +63,11 @@
   text-transform: uppercase;
   font-weight: 500;
 }
-.box__interest{
+.box__heading{
   margin-bottom: 20%;
 }
 
-.content__interest{
+.content__heading{
 margin-bottom: 15%;
 }
 .skills{
@@ -77,7 +77,7 @@ margin-bottom: 15%;
   font-weight: 500;
 
 }
-.box__skills {
+.box__enumeration-of-skills {
   margin: auto;
 }
 .images {
@@ -122,7 +122,7 @@ margin-bottom: 15%;
   padding-top: 4vw;
   text-transform: full-size-kana;
 }
-.footer__author {
+.footer__heading{
   margin: auto;
 }
 
@@ -133,11 +133,11 @@ margin-bottom: 15%;
   box-shadow: 1vw 1vw 2vw rgba(250, 50, 50, .4);
 
 }
-.body__box {
+.body__block {
   margin-right: auto;
 }
 
-.header__photo{
+.header__main-photo{
   float: right;
   width:20vw;
   height: 30vw;
@@ -184,7 +184,7 @@ margin-bottom: 15%;
   .interest{
     font-size: 7vw;
   }
-  .content__interest{
+  .content__heading{
     margin-top: 150vw;
   }
 }
