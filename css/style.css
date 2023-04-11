@@ -67,7 +67,6 @@
   margin-bottom: 20%;
 }
 
-
 .content__interest{
 margin-bottom: 15%;
 }
@@ -146,7 +145,6 @@ margin-bottom: 15%;
 }
 .content{
   text-align: center;
-
 }
 
 @media (max-width: 70vw) {
@@ -163,4 +161,30 @@ margin-bottom: 15%;
   }
 }
 
-
+@media screen and (max-width: 400px) {
+  .images {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: row;
+    gap: 8%;
+    padding: 10% 10% 5% 10%;
+  }
+  .photo {
+    width: 100%;
+    height: 100%
+  }
+  .skills{
+    font-size: 5vw;
+  }
+  .box{
+    width:100%;
+    height: 30vw;
+  }
+  .interest{
+    font-size: 7vw;
+  }
+  .content__interest{
+    margin-top: 150vw;
+  }
+}
