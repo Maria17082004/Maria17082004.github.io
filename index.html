@@ -2,59 +2,133 @@
 <html lang="ru">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <meta name="keywords" content="Маша Мокеева">
-  <meta name="description" content="Знакомство">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Maria Mokeeva">
-  <meta property="og:description" content="The website shows my resume">
-  <meta property="og:image" content="./img/главнаяфотка.jpg">
-  <title>Портфолио</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Маша Мокеева">
+    <meta name="description" content="Знакомство">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Maria Mokeeva">
+    <meta property="og:description" content="My website">
+    <meta property="og:image" content="img/главнаяфотка.jpg">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="body">
-<header class="header">
-  <div class="overlay">
-    <h5 class="title overlay__title">Привет! Я Маша Мокеева и я учусь на 1 курсе МФТИ ВШПИ</h5>
-    </div>
-</header>
-<section class="content body__contained">
-  <img class="photo header__main-photo" src="img/главнаяфотка.jpg"  alt="Главная фотка">
-<div class="box body__block">
-  <h5 class="interest box__heading">Навыки</h5>
-  <p class="skills box__enumeration-of-skills">Катаюсь на горных лыжах, на коньках, танцую
-  Играю на фортепиано
-  Занимаюсь разными видами спорта
-  И немножко программирую 🙃</p>
-</div>
-  </section>
 
-<div class="content body__contained">
-  <h5 class="interest content__heading">Мои интересы</h5>
-</div>
-<div>
-  <div class="container">
-    <div class="images">
-      <img class="photo images__interest" src="img/сцена.jpg" alt="фотка1">
-      <img class="photo images__interest" src="img/наскале.jpg" alt="фотка2">
-      <img class="photo images__interest" src="img/дерево.jpg" alt="фотка3">
-      <img class="photo images__interest" src="img/сноуборд.jpg" alt="фотка4">
+<body class="page">
+
+
+<header class="header overlay">
+    <nav class="menu">
+        <ul class="menu__list row">
+            <a type="button" class="header__button font_size link" >Поменяй фон</a>
+            <a class="header__button link button-rain font_size"  type="button">Дождь</a>
+            <a class="button-contact font_size link" type="button">Связь со мной</a>
+        </ul>
+    </nav>
+</header>
+
+
+
+ <div class="aboutMe">
+     <h1 class="title overlay__title title__border">Привет, я Маша Мокеева и я учусь на 1 курсе ВШПИ</h1>
+ </div>
+
+    <section class="content body__contained">
+        <img class="header__main-photo" src="img/главнаяфотка.jpg"  alt="Главная фотка">
+        <div class="box body__block">
+            <h5 class="interest box__heading">Навыки</h5>
+            <p class="skills box__enumeration-of-skills">Катаюсь на горных лыжах, на коньках, танцую,
+                Играю на фортепиано,
+                Занимаюсь разными видами спорта
+                И немножко программирую 🙃</p>
+        </div>
+    </section>
+
+
+
+<main class="content_1">
+    <div class="centered-block content__block">
+        <ul class="row photo-list">
+            <li>
+                <a href="./img/сцена.jpg" class="link link_popup">
+                    <img src="./img/сцена.jpg" alt="Фотка на сцене" class="photo_height">
+                </a>
+            </li>
+            <li>
+                <a href="./img/наскале.jpg" class="link link_popup">
+                    <img src="./img/наскале.jpg" alt="Фотка я на скале" class="photo_height">
+                </a>
+            </li>
+            <li>
+                <a href="./img/дерево.jpg" class="link link_popup">
+                    <img src="./img/дерево.jpg" alt="Фотка я скалалазка" class="photo_height">
+                </a>
+            </li>
+        </ul>
     </div>
-  </div>
-</div>
-<footer class="footer">
-  <h4 class="author footer__heading">Контакты</h4>
-  <div class="footer__contact">
-    <div class="vk footer__vk">
-      <a href="https://vk.com/mokeevamasha" aria-label="Ссылка на VK" class="link" target="_blank"></a>
+
+</main>
+<footer class="footer" id="contacts">
+    <a class="author" >Контакты</a>
+    <div class="column">
+        <ul class="row footer__list">
+            <li class="footer__logo">
+                <a href="https://vk.com/mokeevamasha" target="_blank">
+                    <img src="img/vk.png"  alt="вк">
+                </a>
+            </li>
+        </ul>
     </div>
-  </div>
 </footer>
+
+
+<div class="appear-popup">
+    <div class="appear-popup__container">
+        <p class="appear-popup__text">За вами следят</p>
+        <button type='button' class="appear-popup__close-button"></button>
+    </div>
+</div>
+
+<div class="validation-popup">
+    <div class="validation-popup__container">
+        <p class="validation-popup__text">Успешно отправлено</p>
+        <button type='button' class="validation-popup__close-button"></button>
+    </div>
+</div>
+
+
+<div class="form-popup">
+    <div class="form-popup__container">
+        <form action="" class="form-popup__form">
+            <h2 class="form-popup__heading">Обратная связь</h2>
+            <label for="text" class="form-popup__email">ФИО</label>
+            <input type="text" id="text" required class="form-popup__input" placeholder="Иван Иванов">
+            <span class="text-error"></span>
+            <label for="tel" class="form-popup__email">Телефон</label>
+            <input type="tel" id="tel" required class="form-popup__input" placeholder="+79999999999">
+            <span class="tel-error"></span>
+            <label for="email" class="form-popup__email">Email</label>
+            <input type="email" id="email" required class="form-popup__input" placeholder="mashechka@mail.ru">
+            <span class="email-error"></span>
+
+            <button class="form-popup__button" type="submit">
+                Отправить
+            </button>
+            <button class="form-popup__close-button" type="button"></button>
+        </form>
+    </div>
+</div>
+<div class="popup">
+    <div class="popup__container">
+        <a class="popup__link popup__link_left link" href="#">
+        </a>
+        <div class="popup__image">
+        </div>
+        <a class="popup__link popup__link_right link" href="#">
+        </a>
+    </div>
+</div>
+
+<div class="rain rain_animation"></div>
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
