@@ -249,7 +249,7 @@ function appearPopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(appearPopupOpen, 5);
+        setTimeout(appearPopupOpen, 3000);
     }
 }
 function appearPopupClose() {
