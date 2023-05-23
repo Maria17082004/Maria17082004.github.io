@@ -38,18 +38,6 @@ const appearPopupButton = document.querySelector(".appear-popup__close-button");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 function hasInvalidInput(inputList) {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
@@ -169,6 +157,9 @@ validationPopupCloseButton.addEventListener('click',  (evt)  =>{
 
 
 
+
+
+
 const checkLinks =  (img) =>{
     const imgParent = img.parentElement;
     if (imgParent.nextElementSibling) {
@@ -196,6 +187,7 @@ popupItems.forEach((item) => {
         img.classList.add('active');
         popupImage.innerHTML = `<img src="${imgLink}"alt="Картинка" style="max-width: 100%">`;
         checkLinks(img);
+
     })
 })
 
@@ -224,11 +216,14 @@ popupLinkL.addEventListener('click', (evt) => {
 
 
 const popupOpen = document.querySelector(".popup");
+const body = document.querySelector(".page");
 
 document.addEventListener('click', (evt) =>{
     if(evt.target === popupOpen && popupOpen.classList.contains("popup_open")){
         const img = document.querySelector(".active");
+        // body.style.overflow = "hidden";
         img.classList.remove("active");
+        // popupOpen.classList.remove("hiddenScroll");
         closePopup(popupOpen,"popup_open");
         popupOpen.querySelectorAll('.popup').forEach((popupItem) => {
             popupItem.classList.remove("popup_active");
@@ -252,7 +247,7 @@ function appearPopupOpen() {
 
 function sendMessage() {
     if (!localStorage.getItem("send-flag")) {
-        setTimeout(appearPopupOpen, 3000);
+        setTimeout(appearPopupOpen, 10000);
     }
 }
 function appearPopupClose() {
@@ -264,13 +259,16 @@ function appearPopupClose() {
 }
 
 
-
+oPage = document.querySelector(".page");
 
 function openPopup(popup, popupClass) {
     popup.classList.add(popupClass);
+    oPage.classList.add("hiddenScroll");
+
 }
 function closePopup(popup, popupClass) {
     popup.classList.remove(popupClass);
+    oPage.classList.remove("hiddenScroll");
 }
 
 formClosePopupButton.addEventListener('click',  (evt) => {
@@ -297,12 +295,23 @@ document.addEventListener('click', (evt) =>{
 });
 
 
+
+
+
+
+
+
+
 const formButtonTheme = document.querySelector(".header__button");
 const page = document.querySelector(".page");
 formButtonTheme.addEventListener('click',  (evt)  =>{
     page.classList.toggle("page_dark");
 
 })
+
+
+
+
 
 
 
