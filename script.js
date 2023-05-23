@@ -82,6 +82,9 @@ function hideInputError(formElement, inputElement, parametrs) {
     errorElement.textContent = '';
 }
 const checkEmail = function (input) {
+    if (!input.value.includes('.')) {
+        return true;
+    }
     const emailEnd = input.value.split(".").pop();
     return (input.length - emailEnd.length - 1) <= 2 || emailEnd.length < 2 || emailEnd.length > 6 || !(/[a-z]/i.test(emailEnd));
 }
