@@ -28,6 +28,28 @@ const popupAppear = document.querySelector(".appear-popup");
 
 const appearPopupButton = document.querySelector(".appear-popup__close-button");
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function hasInvalidInput(inputList) {
     return inputList.some((inputElement) => {
         return !inputElement.validity.valid;
@@ -59,10 +81,18 @@ function hideInputError(formElement, inputElement, parametrs) {
     errorElement.classList.remove(parametrs.errorClass);
     errorElement.textContent = '';
 }
-
+const checkEmail = function (input) {
+    const emailEnd = input.value.split(".").pop();
+    return (input.length - emailEnd.length - 1) <= 2 || emailEnd.length < 2 || emailEnd.length > 6 || !(/[a-z]/i.test(emailEnd));
+}
+const checkTel = function (input) {
+    const inputValue = input.value.split("+");
+    const telEnd = inputValue.pop();
+    return Number.isNaN(Number(telEnd)) || telEnd.length !== 11 || (inputValue.length === 1 && inputValue[0] !== "") || inputValue.length > 1;
+}
 function isValid(formElement, inputElement, parametrs) {
-    if (!inputElement.validity.valid) {
-        showInputError(formElement, inputElement, inputElement.validationMessage, parametrs);
+    if (!inputElement.validity.valid || (inputElement.type === "email" && checkEmail(inputElement)) || (inputElement.type === "tel" && checkTel(inputElement))) {
+        showInputError(formElement, inputElement, 'ошибка в вводе', parametrs);
     } else {
         hideInputError(formElement, inputElement, parametrs);
     }
@@ -86,6 +116,14 @@ function enableValidation(parametrs){
 }
 
 enableValidation(enableValidationData);
+
+
+
+
+
+
+
+
 
 
 
@@ -199,14 +237,31 @@ document.addEventListener('click', (evt) =>{
 
 
 
-setTimeout(() => {
-    openPopup(popupAppear,"appear-popup_open");
-}, 30000);
 
-appearPopupButton.addEventListener('click',  (evt)  =>{
-    evt.preventDefault();
-    closePopup(popupAppear,"appear-popup_open");
-})
+
+sendMessage()
+appearPopupClose()
+
+function appearPopupOpen() {
+    const popupMessage = document.querySelector(".appear-popup");
+    popupMessage.classList.add("appear-popup_open");
+}
+
+function sendMessage() {
+    if (!localStorage.getItem("send-flag")) {
+        setTimeout(appearPopupOpen, 5);
+    }
+}
+function appearPopupClose() {
+    appearPopupButton.addEventListener('click', function () {
+        localStorage.setItem("send-flag", "true");
+        const popupHello = document.querySelector(".appear-popup_open");
+        popupHello.classList.remove("appear-popup_open");
+    })
+}
+
+
+
 
 function openPopup(popup, popupClass) {
     popup.classList.add(popupClass);
@@ -219,7 +274,9 @@ formClosePopupButton.addEventListener('click',  (evt) => {
     closePopup(formPopup, 'form-popup_open');
 })
 
+const formInputList = Array.from(formPopup.querySelectorAll('.form-popup__input'));
 formButtonContact.addEventListener('click',  (evt) => {
+    toggleButtonState(formInputList, buttonFormPopup, enableValidationData.inactiveButtonClass);
     openPopup(formPopup, 'form-popup_open');
 })
 
@@ -241,7 +298,7 @@ const formButtonTheme = document.querySelector(".header__button");
 const page = document.querySelector(".page");
 formButtonTheme.addEventListener('click',  (evt)  =>{
     page.classList.toggle("page_dark");
-    
+
 })
 
 
@@ -266,4 +323,3 @@ window.addEventListener('resize',  () => {
         rainAnimation.classList.toggle("rain_animation");
     }
 })
-
